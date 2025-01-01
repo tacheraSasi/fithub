@@ -1,6 +1,8 @@
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
 import { useNavigation, useRouter } from 'expo-router';
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import {  Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 export default function HomeScreen() {
   const router = useRouter()
@@ -10,29 +12,29 @@ export default function HomeScreen() {
     router.push("/scan")
   }
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       {/* Header Section */}
-      <View style={styles.header}>
-        <Text style={styles.title}>fithub Code Scanner</Text>
+      <ThemedView style={styles.header}>
+        <ThemedText style={styles.title}>fithub Code Scanner </ThemedText>
         <Image
           source={require('../../assets/images/icon.png')} 
           style={styles.headerImage}
         />
-      </View>
+      </ThemedView>
 
       {/* Scan Button */}
       <TouchableOpacity style={styles.scanButton} onPress={() => gotoScannerPage()}>
-        <Text style={styles.scanButtonText}>Scan fithub Code</Text>
+        <ThemedText style={styles.scanButtonText}>Scan fithub Code </ThemedText>
       </TouchableOpacity>
 
       {/* Info Section */}
-      <View style={styles.infoSection}>
-        <Text style={styles.infoTitle}>How to Use:</Text>
-        <Text style={styles.infoText}>1. Tap the "Scan fithub Code" button.</Text>
-        <Text style={styles.infoText}>2. Align the fithub code in the frame.</Text>
-        <Text style={styles.infoText}>3. Get instant results!</Text>
-      </View>
-    </View>
+      <ThemedView style={styles.infoSection}>
+        <ThemedText style={styles.infoTitle}>How to Use: </ThemedText>
+        <ThemedText style={styles.infoText}>1. Tap the "Scan fithub Code" button. </ThemedText>
+        <ThemedText style={styles.infoText}>2. Align the fithub code in the frame. </ThemedText>
+        <ThemedText style={styles.infoText}>3. Get instant results! </ThemedText>
+      </ThemedView>
+    </ThemedView>
   );
 }
 
